@@ -3,10 +3,28 @@
 ## Le projet
 Application web bilingue (français / anglais) : lexique des métiers du textile et du cuir, d'environ 1 900 fiches, avec définitions, équivalences FR/EN et anecdotes historiques.
 
-- Technologie : Astro, site statique. Hébergement gratuit sur GitHub Pages.
+- Technologie : Astro, site statique.
+- Hébergement : GitHub Pages sert uniquement pour démarrer. Le site sera hébergé plus tard chez OVH, avec un nom de domaine, et le dépôt GitHub passera alors en privé (voir « Hébergement : étapes prévues »).
 - Ne jamais modifier le projet voisin « echos-du-temps ».
 - Chris n'est pas développeur : expliquer simplement chaque étape, présenter un plan et attendre son accord avant de construire.
-- Les données du lexique viennent d'Excel : elles sont placées dans `src/data/`.
+- Les vraies fiches du lexique ne sont jamais dans ce dépôt (voir « Dépôt public et données » ci-dessous).
+
+## Dépôt public et données (règle impérative)
+Le dépôt GitHub est public, pour pouvoir utiliser GitHub Pages gratuitement. Tout ce qu'il contient est donc lisible par tout le monde, historique git compris.
+
+- Le dépôt ne doit contenir AUCUNE fiche réelle du lexique, même gratuite : ni définition, ni équivalence FR/EN, ni anecdote réelle, ni export Excel/CSV/JSON des vraies données, ni extrait, ni « copie de test ».
+- Seules sont autorisées 3 à 5 fiches d'exemple entièrement inventées, pour tester l'affichage. Elles sont signalées comme fictives (ex. champ `exemple: true`) et stockées dans `src/data/`.
+- Les vraies fiches seront dans une base de données privée, qui les fournira une par une (pas d'export complet dans le dépôt). L'architecture exacte sera décidée plus tard, avec l'accord de Chris.
+- En cas de doute sur le caractère réel d'une donnée : ne pas l'ajouter, demander à Chris.
+- Une donnée poussée sur un dépôt public reste récupérable dans l'historique : en cas d'erreur, prévenir Chris immédiatement.
+- Ne jamais ajouter de fichier de vraies données au dépôt, et le garder hors du suivi git (`.gitignore`) s'il doit exister en local.
+
+## Hébergement : étapes prévues
+1. Maintenant : dépôt public + GitHub Pages (gratuit), uniquement pour démarrer.
+2. Plus tard : hébergement chez OVH avec un nom de domaine ; le dépôt GitHub passe en privé et GitHub Pages est arrêté.
+- Le code doit rester facile à déplacer : ne pas dépendre de GitHub Pages au-delà de `site` et `base` dans `astro.config.mjs` (qui changeront lors du passage à OVH, `base` redevenant `/`).
+- L'hébergement OVH et le nom de domaine sont la seule dépense prévue, décidée par Chris ; la règle « aucun abonnement payant » s'applique à tout le reste.
+- Passer le dépôt en privé ne rend pas privé ce qui a déjà été publié : la règle « aucune fiche réelle » reste valable en permanence.
 
 ## Couleurs (charte)
 | Couleur | Code | Usage |
@@ -58,7 +76,7 @@ Bibliothèque Lucide (gratuite), style contour, trait chocolat.
 ## Structure des dossiers
 - `public/images/` : logo, favicon
 - `public/fonts/` : polices Spectral et Style Script
-- `src/data/` : données du lexique (exports Excel)
+- `src/data/` : 3 à 5 fiches d'exemple inventées uniquement (jamais de vraies fiches)
 - `src/pages/`, `src/components/`, `src/layouts/` : pages et composants
 - `src/i18n/` : traductions de l'interface
 - `src/styles/` : styles de la charte

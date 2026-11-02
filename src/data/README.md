@@ -1,4 +1,7 @@
-# Données du lexique
+# Données d'exemple
 
-Déposez ici les fichiers exportés depuis Excel (format CSV ou JSON) :
-les ~1 900 fiches avec définitions, équivalences FR/EN et anecdotes historiques.
+Ce dépôt est public. Ce dossier ne contient que 3 à 5 fiches d'exemple
+entièrement inventées, pour tester l'affichage.
+
+Les vraies fiches du lexique ne doivent JAMAIS être déposées ici : elles
+seront dans une base de données privée.
