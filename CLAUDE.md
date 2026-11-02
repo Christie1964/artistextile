@@ -23,6 +23,7 @@ Le dépôt GitHub est public, pour pouvoir utiliser GitHub Pages gratuitement. T
 1. Maintenant : dépôt public + GitHub Pages (gratuit), uniquement pour démarrer.
 2. Plus tard : hébergement chez OVH avec un nom de domaine ; le dépôt GitHub passe en privé et GitHub Pages est arrêté.
 - Le code doit rester facile à déplacer : ne pas dépendre de GitHub Pages au-delà de `site` et `base` dans `astro.config.mjs` (qui changeront lors du passage à OVH, `base` redevenant `/`).
+- Tant que GitHub Pages est utilisé, le site est servi sous `/artistextile` (`base`) : tous les liens internes, images et polices doivent tenir compte de ce préfixe (utiliser `import.meta.env.BASE_URL`, jamais de `/chemin` en dur).
 - L'hébergement OVH et le nom de domaine sont la seule dépense prévue, décidée par Chris ; la règle « aucun abonnement payant » s'applique à tout le reste.
 - Passer le dépôt en privé ne rend pas privé ce qui a déjà été publié : la règle « aucune fiche réelle » reste valable en permanence.
 
